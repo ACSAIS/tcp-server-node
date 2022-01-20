@@ -25,3 +25,9 @@ client.write("hello");
 client.on("data", (data) => {
   console.log(`receive from server: "${data}"`);
 });
+const client1 = new net.Socket();
+client1.connect(PORT, HOST);
+client1.write("hello");
+client1.on("data", (data) => {
+  console.log(`receive from server: "${data}"`);
+});
