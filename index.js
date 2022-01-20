@@ -18,3 +18,10 @@ server.on("listening", () => {
 server.on("connection", () => {
     console.log("connection established");
 });
+
+const client = new net.Socket();
+client.connect(PORT, HOST);
+client.write("hello");
+client.on("data", (data) => {
+  console.log(`receive from server: "${data}"`);
+});
